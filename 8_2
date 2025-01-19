@@ -1,0 +1,29 @@
+def personal_sum(numbers):
+    result = 0
+    incorrect_data = 0
+    for i in numbers:
+        try:
+           result += numbers
+        except TypeError:
+            incorrect_data +=1
+    return(result, incorrect_data)
+    print(f'Итог: {result}, Ошибки: {incorrect_data}')
+
+def calculate_average(numbers):
+    average = 0
+    try:
+        sum_numbers, incorrect_numbers = personal_sum(numbers)
+        number_size = len(numbers)
+        average = sum_numbers/(number_size - incorrect_numbers)
+    except ZeroDivisionError:
+        print(f'Коллекция пустая')
+    except TypeError:
+        print(f"Некорректный тип данных")
+    finally:
+        return average
+
+
+
+
+
+
