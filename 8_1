@@ -1,0 +1,13 @@
+def add_everything_up(a,b):
+    try:
+        result = a+b
+        return result
+
+    except TypeError:
+        if type(a) == int or type(a) == float and type(b) == str:
+            result = str(a) + b
+        elif type(b) == int or type(b) == float and type(a) == str:
+            result = a + str(b)
+    return result
+
+print(add_everything_up("a","b"))
